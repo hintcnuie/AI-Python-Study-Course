@@ -1,8 +1,9 @@
-# 基础 if 语句：路口转向判断
-direction = input("请输入当前路口方向（左\右）：")
+# 关卡2：向左走还是向右走？
 
-if direction == "左":
-    print("🚗 导航指令：车辆向左转弯")
 
-if direction == "右":
-    print("🚗 导航指令：车辆向右转弯")
+# 获取导航指令
+direction = input("请输入导航指令（左转/右转）：")
+
+if direction == "左转":# 这里填什么？
+    print("收到指令！准备左转...")
+
