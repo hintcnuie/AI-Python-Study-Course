@@ -1,164 +1,106 @@
+# 易易的作业
 
-# 🚗 少儿Python编程教学项目 — 条件判断语句专题
+## 环境配置
 
-## 📌 项目简介
-
-本项目为**小学四五年级（10-12岁）Python编程专属教学资源**，围绕 `if / if-else / if-elif-else`三大条件判断核心语法展开教学。
-
-采用**自动驾驶智能小车导航**趣味游戏案例，贴合小学生形象思维特点，将抽象代码语法转化为生活化的红绿灯、路况导航场景，零基础友好、课堂趣味性强，适配线下/线上编程授课。
-
-## 👨‍🎓 学情适配说明
-
-- **授课对象**：10-12岁 四五年级小学生
-
-- **前置基础**：已掌握变量、print输出、input输入基础语法
-
-- **学生思维特点**：形象思维成熟，初步具备逻辑思维，对抽象语法理解较弱，需要具象场景、游戏化案例辅助学习
-
-- **教学核心思路**：生活化场景 + 游戏闯关 + 代码实操，降低抽象编程学习门槛
-
-## 🎯 整体教学目标
-
-### 1. 知识目标
-
-- 掌握 `if` 单分支条件判断语法格式与使用场景
-
-- 掌握 `if-else` 双分支二选一判断逻辑
-
-- 掌握 `if-elif-else` 多分支复杂条件判断逻辑
-
-- 理解代码缩进、条件表达式、冒号语法规范
-
-### 2. 能力目标
-
-- 能够将生活场景（红绿灯、路况导航）转化为代码判断逻辑
-
-- 独立编写基础条件判断代码，完成智能小车导航案例
-
-- 具备简单的代码纠错、逻辑调试能力
-
-### 3. 素养目标
-
-- 建立「条件判断、逻辑推理」的编程思维
-
-- 结合交通场景，培养交通安全规则意识
-
-- 培养严谨的代码书写习惯和自主探究学习能力
-
-## 📚 教学重难点
-
-- **教学重点**：三大条件判断语句的语法格式、执行逻辑、基础应用
-
-- **教学难点**：现实场景转化为代码条件、多分支判断逻辑梳理、代码缩进规范
-
-## 🎮 核心教学案例：智能自动驾驶小车导航系统
-
-全程贯穿统一趣味案例，保证课程连贯性，降低学生学习成本：
-
-- 场景：卡通自动驾驶小车城市道路行驶
-
-- 判断场景：红灯/绿灯/黄灯通行判断、左转/右转/直行路况导航
-
-- 学习逻辑：从单条件判断 → 二选一判断 → 多条件综合判断，循序渐进
-
-## 💻 开发环境配置（Conda + PyCharm）
-
-本项目统一使用 **Conda 虚拟环境** 管理Python环境，隔离全局环境，避免版本冲突，适配PyCharm开发。
-
-### 1. 虚拟环境信息
-
-- **环境名称**：ai-python-study
-
-- **Python版本**：3.11（稳定适配少儿编程教学）
-
-### 2. Conda 环境搭建命令（一键执行）
-
-打开 Anaconda Prompt / 终端，依次执行以下命令：
+### 1. 创建 Conda 虚拟环境
 
 ```bash
-# 1. 创建专属虚拟环境
-conda create -n ai-python-study python=3.11
-
-# 2. 激活虚拟环境
-conda activate ai-python-study
-
-# 3. 查看所有conda环境（验证是否创建成功）
-conda env list
-
-# 4. 退出环境（备用）
-conda deactivate
-
-# 5. 删除旧环境（备用，清理中文旧环境）
-conda remove -n "这次python学习" --all
+conda create -n ai-python-study python=3.12 -y
 ```
 
-### 3. PyCharm 项目环境配置步骤
+### 2. 激活环境并安装依赖
 
-1. 打开 PyCharm，导入本项目文件夹
+```bash
+conda activate ai-python-study
+pip install numpy pandas
+```
 
-2. 进入 `File → Settings → Project → Python Interpreter`
+### 3. 在 PyCharm 中配置解释器
 
-3. 点击 `Add Interpreter`，选择 `Existing environment`
+打开 PyCharm，进入 **Settings → Project → Python Interpreter**，选择已存在的 Conda 环境 `ai-python-study`。
 
-4. 选择 conda 环境路径：
-        
+> 如果 PyCharm 没有自动识别该环境，可以手动添加：
+> 点击齿轮图标 → **Add** → **Conda Environment** → **Existing environment** →
+> 选择 conda 安装目录下 `envs/ai-python-study/bin/python`。
 
-    - Windows：`anaconda3/envs/ai-python-study/python.exe`
+### 各题目依赖说明
 
-    - Mac/Linux：`anaconda3/envs/ai-python-study/bin/python`
+| 题目 | 依赖库 |
+|------|--------|
+| 第1题 | 无（Python 标准库） |
+| 第2题 | 无（Python 标准库） |
+| 第3题 | 无（Python 标准库） |
+| 第4题 | numpy, pandas |
+| 第5题 | pandas |
 
-5. 确认配置，完成环境绑定
+---
 
-## 📁 项目代码文件清单（全英文规范命名）
+### 4. 运行测试
 
-所有课堂案例代码已标准化命名，可直接运行、上传Git、用于课堂实操：
+本项目使用 pytest 进行单元测试。
 
-### 1. 基础 if 单分支语句
+```bash
+# 安装测试依赖
+pip install -r requirements.txt
 
-- `traffic_light_if.py` — 红绿灯基础判断
+# 运行所有测试
+python -m pytest tests/ -v
 
-- `road_direction_if.py` — 路口转向判断
+# 运行单个题目的测试
+python -m pytest tests/test_1_count_char.py -v
+```
 
-### 2. if-else 双分支语句
+测试覆盖了每道题目的核心逻辑，包括边界情况和错误处理。
 
-- `traffic_light_if_else.py` — 红绿灯二选一判断
+---
 
-- `road_state_if_else.py` — 道路直行/转弯判断
+## 1. 题目
+1.给定一个字符串 s1，找到里面出现 c的次数(忽略大小写），并利用字符串的格式化，打印出：”
+c出现了× 次”打印出来(其中，×为出现的次数）。
 
-### 3. if-elif-else 多分支语句
+ 
+`st =welcome to China. China is a great country. Chinese people love to buy china!`
+`#输出应为：”c出现了 6次”`
 
-- `full_traffic_light.py` — 红黄绿三色灯完整判断
+## 2. 题目：生成列表 listl = ［2,3,5,7,9，［2,4,6,8］］，请基于list1完成以下操作：
+ 1）. 获取5这个值 
+ 
+ 2）.获取切片［4,6,8］
 
-- `multi_road_navigation.py` — 多路况导航综合判断
+## 3. 题目： 函数和字符串练习：写一个函数使得给一个超过5位的字符串s，其长度是奇数时打印中间3位数，其长度是偶数时打印中间两位数。请利用函数实现(字符串为函数的参数输入）。
 
-### 4. 课堂综合拓展案例
+ 举例：
 
-- `smart_car_comprehensive.py` — 智能小车全套导航综合程序
+ `Sr'abadefg 时的输出为："cde"# s-'abodef'时的输出为："cd""`
+ 
+## 4.  题目：利用以下代码生成一个 DataFrame，列名分别为 A,B,C,D。其中，A列为从2开始的15个连续偶数(246,8..），B列为符合标准正态分布的15个随机数，C列为10-100之间的15个随机数，
+D列为符合50为均值，10为方差的15个随机数。
 
-## 📖 课程教学流程（45分钟标准课堂）
+`dict = 'A':n.arange/2,32,2), B:p.random.rand(15), 'C:np.random.randint(10,101,15), D':np.ra
+ndom.normal (50,10,1 5)} df=pd.DataFrame(dict1)
+`
 
-1. **趣味导入（5min）**：自动驾驶小车场景提问，引出「条件判断」核心概念
+    完成以下操作：
 
-2. **新知讲解（15min）**：通俗讲解if/if-else/if-elif-else语法，结合路况具象拆解抽象逻辑
+1） 获取第4行的数据
 
-3. **游戏实操闯关（20min）**：学生修改代码、输入参数，操控小车完成导航闯关
+2） 提取第3行、第5行与列B,D的交叉部分
 
-4. **课堂小结+作业（5min）**：梳理知识点，布置拓展编程练习
+3） 删除A 列值为16的那一行记录
 
-## ✅ 项目特点
+## 5.  题目：利用上传的银行客户数据(BankCustomer Data.csv），完成下列操作。
 
-- ✅ 全英文规范文件命名，适配Git版本管理
+1）查看有哪些变量
 
-- ✅ 专属Conda虚拟环境，环境干净无冲突
+2） 查看所有变量的数据类型
 
-- ✅ 游戏化案例贯穿全程，贴合小学生认知规律
+3） 在原 DataFrame 中，删除job为 unknown 的行
 
-- ✅ 代码由浅入深，循序渐进，适合零基础教学
+4）新生成一列year，赋值为字符串格式的“2025”
 
-- ✅ 配套完整教学设计、PPT、实操代码，可直接开课使用
+5） 连接 year，month 2 个变量生成新的变量ym，为字符串格式，用-符号链接。
 
-## 📝 版权说明
+    例： 
+    `2025-aug(字符串和字符串的连接可以用+）`
 
-本项目为少儿Python编程教学专用资源，适用于小学编程课堂教学、课后练习、兴趣拓展学习，可自由用于教学与学习用途。
-
-> （注：文档部分内容可能由 AI 生成）
+6） 利用 loc 命令提取出 age大于60且 job 为 retired 的记录，放入到一个名为 group1 的 DataFrame 中。
