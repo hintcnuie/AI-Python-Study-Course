@@ -1,0 +1,16 @@
+age,job,marital,education,balance,month
+35,technician,married,secondary,1200,jan
+62,retired,married,primary,8500,feb
+28,unknown,single,tertiary,500,mar
+45,services,divorced,secondary,2300,jan
+67,retired,married,primary,12000,apr
+31,management,single,tertiary,3400,feb
+55,blue-collar,married,secondary,1800,may
+70,retired,widowed,primary,9500,jun
+22,unknown,single,secondary,200,jul
+41,entrepreneur,married,tertiary,5600,aug
+58,admin,divorced,secondary,4100,sep
+73,retired,married,primary,15000,oct
+33,technician,single,tertiary,2900,nov
+48,self-employed,married,tertiary,7200,dec
+65,retired,widowed,secondary,11000,jan
