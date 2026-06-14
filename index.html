@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="璐璐手作小屋 - 一个热爱手工的女大学生的个人网站，分享布娃娃、木质相框等手工作品与生活点滴。">
+    <meta name="keywords" content="手工,布娃娃,木质相框,手作,DIY,个人博客">
+    <meta name="author" content="璐璐">
+    <title>璐璐手作小屋 - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+</head>
+<body>
+
+    <!-- ========== 滚动公告栏 ========== -->
+    <div class="announcement-bar">
+        <div class="announcement-wrap">
+            <div class="announcement-scroll">
+                <span>🌟 欢迎来到璐璐手作小屋！新作品上架啦~</span>
+                <span>🧵 手工布娃娃定制开放中，欢迎联系~</span>
+                <span>🖼️ 木质相框新品上线，纯手工打造~</span>
+                <span>💌 留言板已开放，期待与你的交流~</span>
+                <span>🌈 风雨里做一个大人，阳光下做个孩子~</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 导航栏 ========== -->
+    <nav class="navbar" role="navigation" aria-label="主导航">
+        <div class="nav-inner">
+            <a href="index.html" class="logo" aria-label="璐璐手作小屋 - 返回首页">
+                <div class="logo-icon">🧵</div>
+                <div class="logo-text">
+                    <span class="logo-title">璐璐手作小屋</span>
+                    <span class="logo-subtitle">Lulu's Handmade Cottage</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">首页</a>
+                <a href="about/index.html">关于我</a>
+                <a href="dolls/index.html">布娃娃</a>
+                <a href="frames/index.html">木质相框</a>
+                <a href="gallery/index.html">作品集</a>
+                <a href="diary/index.html">手工日记</a>
+                <a href="guestbook/index.html">留言交流</a>
+                <a href="links/index.html">友情链接</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== 主要内容 ========== -->
+    <main class="main-content">
+
+        <!-- 英雄区 -->
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="hero-content">
+                <div class="hero-avatar">🧸</div>
+                <h1 id="heroTitle">璐璐手作小屋</h1>
+                <p class="motto">风雨里做一个大人，阳光下做个孩子</p>
+                <p class="intro">
+                    嗨~ 我是璐璐，一名热爱手工的女大学生。<br>
+                    在这里，我用针线缝制温暖，用木头雕刻时光。<br>
+                    每一件手工作品，都承载着我对生活的热爱与期待。
+                </p>
+            </div>
+        </section>
+
+        <!-- 特色展示 -->
+        <section class="section" aria-labelledby="featureTitle">
+            <div class="section-title">
+                <h2 id="featureTitle">✨ 我的手艺</h2>
+                <p>用双手创造美好，让每一件作品都有温度</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">🧸</span>
+                    <h3>布娃娃制作</h3>
+                    <p>精选柔软面料，一针一线手工缝制。每只布娃娃都是独一无二的小精灵，带着温暖与治愈的力量。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🖼️</span>
+                    <h3>木质相框</h3>
+                    <p>精选优质木材，手工打磨、拼接、上色。每个相框都凝聚着匠心，为美好瞬间找到最温暖的归宿。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎨</span>
+                    <h3>创意设计</h3>
+                    <p>从灵感的闪现到成品的诞生，每一步都充满创造的喜悦。用心设计，让手作更有灵魂。</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💝</span>
+                    <h3>定制服务</h3>
+                    <p>接受个性化定制需求，无论是布娃娃还是相框，都可以按你的想法来打造专属的手工作品。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选布娃娃 -->
+        <section class="section" style="background:var(--bg-warm);max-width:100%;padding:60px 20px;" aria-labelledby="dollTitle">
+            <div style="max-width:var(--max-width);margin:0 auto;">
+                <div class="section-title">
+                    <h2 id="dollTitle">🧸 精选布娃娃</h2>
+                    <p>每一只都承载着温暖与陪伴</p>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="images/works/doll1.jpg" alt="手工布娃娃作品 - 可爱小熊" class="card-image" loading="lazy">
+                        <div class="card-body">
+                            <h3>暖暖小熊</h3>
+                            <p>柔软绒布手工缝制，40cm大号布娃娃，手感细腻，是陪伴的最佳选择。</p>
+                            <div class="card-tags">
+                                <span class="tag">ee们属性</span>
+                                <span class="tag">夏鸣星属性</span>
+                                <span class="tag">40cm</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>📅 2024年制作</span>
+                            <a href="dolls/detail1.html">查看详情 →</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/works/doll2.jpg" alt="手工布娃娃作品 - 星梦兔兔" class="card-image" loading="lazy">
+                        <div class="card-body">
+                            <h3>星梦兔兔</h3>
+                            <p>精致兔子造型布娃娃，长耳朵、粉嫩脸颊，充满梦幻童话气息。</p>
+                            <div class="card-tags">
+                                <span class="tag">ee们属性</span>
+                                <span class="tag">夏鸣星属性</span>
+                                <span class="tag">40cm</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>📅 2024年制作</span>
+                            <a href="dolls/detail2.html">查看详情 →</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/works/doll3.jpg" alt="手工布娃娃作品 - 花花猫咪" class="card-image" loading="lazy">
+                        <div class="card-body">
+                            <h3>花花猫咪</h3>
+                            <p>可爱猫咪造型，手工绣制面部表情，每一只都拥有独特的性格与灵魂。</p>
+                            <div class="card-tags">
+                                <span class="tag">ee们属性</span>
+                                <span class="tag">夏鸣星属性</span>
+                                <span class="tag">40cm</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>📅 2024年制作</span>
+                            <a href="dolls/detail3.html">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选木质相框 -->
+        <section class="section" aria-labelledby="frameTitle">
+            <div class="section-title">
+                <h2 id="frameTitle">🖼️ 木质相框作品</h2>
+                <p>纯手工打造，为每一帧美好定格</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/works/frame1.jpg" alt="手工木质相框 - 田园风格" class="card-image" loading="lazy">
+                    <div class="card-body">
+                        <h3>田园风实木相框</h3>
+                        <p>采用天然实木，手工打磨边角，保留木材原始纹理，田园风格温馨自然。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>📅 2024年制作</span>
+                        <a href="frames/detail1.html">查看详情 →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/works/frame2.jpg" alt="手工木质相框 - 复古做旧" class="card-image" loading="lazy">
+                    <div class="card-body">
+                        <h3>复古做旧相框</h3>
+                        <p>手工做旧工艺，赋予相框岁月感，适合摆放怀旧照片与艺术画作。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>📅 2024年制作</span>
+                        <a href="frames/detail2.html">查看详情 →</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/works/frame3.jpg" alt="手工木质相框 - 简约现代" class="card-image" loading="lazy">
+                    <div class="card-body">
+                        <h3>简约现代相框</h3>
+                        <p>简洁线条设计，搭配精细木工工艺，现代风格百搭各种家居装饰。</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>📅 2024年制作</span>
+                        <a href="frames/detail3.html">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我预览 -->
+        <section class="section" style="background:var(--bg-warm);max-width:100%;padding:60px 20px;" aria-labelledby="aboutTitle">
+            <div style="max-width:var(--max-width);margin:0 auto;">
+                <div class="section-title">
+                    <h2 id="aboutTitle">👩‍🎨 关于我</h2>
+                    <p>一个热爱手工、热爱生活的女大学生</p>
+                </div>
+                <div class="about-preview">
+                    <div class="about-preview-image">
+                        <img src="images/works/gallery1.jpg" alt="璐璐的手工作品展示" loading="lazy">
+                    </div>
+                    <div class="about-preview-text">
+                        <h2>Hi~ 我是璐璐</h2>
+                        <p>一名在校女大学生，手工爱好者。从最初的兴趣到如今的热爱，手工已经成为我生活中不可或缺的一部分。</p>
+                        <p>我喜欢用柔软的布料缝制可爱的布娃娃——它们有着ee们属性和夏鸣星属性，每只都是40cm的温暖陪伴。我也沉醉于木质相框的制作，感受木材在手中的温度与质感。</p>
+                        <p>我的座右铭是：<strong>风雨里做一个大人，阳光下做个孩子</strong>。希望我的手工作品，能为你带来一丝温暖与快乐。</p>
+                        <a href="about/index.html" class="btn" style="margin-top:12px;">了解更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新日记 -->
+        <section class="section" aria-labelledby="diaryTitle">
+            <div class="section-title">
+                <h2 id="diaryTitle">📔 手工日记</h2>
+                <p>记录手工与生活的点点滴滴</p>
+            </div>
+            <div class="article-list">
+                <div class="article-item">
+                    <div class="article-date">
+                        <span class="day">15</span>
+                        <span class="month">2024.05</span>
+                    </div>
+                    <div class="article-body">
+                        <h3><a href="diary/post1.html">我的第一只布娃娃诞生记</a></h3>
+                        <p>从画草图、选布料、裁剪到一针一线地缝制，每一步都需要耐心与细心。当最后填充好棉花、缝上眼睛的那一刻……</p>
+                        <div class="article-meta">
+                            <span>📂 布娃娃</span>
+                            <span>👁️ 128 浏览</span>
+                            <span>💬 6 评论</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <div class="article-date">
+                        <span class="day">28</span>
+                        <span class="month">2024.05</span>
+                    </div>
+                    <div class="article-body">
+                        <h3><a href="diary/post2.html">木质相框入门心得分享</a></h3>
+                        <p>刚开始接触木工的时候，连锯木头都手抖。经过不断地练习与学习，现在终于可以做出让自己满意的相框了……</p>
+                        <div class="article-meta">
+                            <span>📂 木质相框</span>
+                            <span>👁️ 96 浏览</span>
+                            <span>💬 4 评论</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <div class="article-date">
+                        <span class="day">10</span>
+                        <span class="month">2024.06</span>
+                    </div>
+                    <div class="article-body">
+                        <h3><a href="diary/post3.html">手工给我带来的改变</a></h3>
+                        <p>在快节奏的大学生活中，手工成了我放松心情、沉淀自我的方式。每一次手作都是一次与内心的对话……</p>
+                        <div class="article-meta">
+                            <span>📂 手工感悟</span>
+                            <span>👁️ 156 浏览</span>
+                            <span>💬 8 评论</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:28px;">
+                <a href="diary/index.html" class="btn btn-outline">查看全部日记 →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <!-- 关于本站 -->
+            <div class="footer-col">
+                <h4>🧵 关于本站</h4>
+                <p>璐璐手作小屋是璐璐的个人手工博客网站，分享布娃娃制作、木质相框等手工作品，以及手工生活中的点滴感悟。</p>
+                <p style="margin-top:8px;">🌈 风雨里做一个大人，阳光下做个孩子</p>
+            </div>
+
+            <!-- 快速导航 -->
+            <div class="footer-col">
+                <h4>📑 快速导航</h4>
+                <ul>
+                    <li><a href="about/index.html">关于我</a></li>
+                    <li><a href="dolls/index.html">布娃娃作品</a></li>
+                    <li><a href="frames/index.html">木质相框</a></li>
+                    <li><a href="gallery/index.html">作品集</a></li>
+                    <li><a href="diary/index.html">手工日记</a></li>
+                    <li><a href="guestbook/index.html">留言交流</a></li>
+                </ul>
+            </div>
+
+            <!-- 联系方式 -->
+            <div class="footer-col">
+                <h4>📬 联系方式</h4>
+                <p>作者：璐璐</p>
+                <p>邮箱：yelulu@example.com</p>
+                <p>地址：中国某某大学手工社团</p>
+                <p>微信：lulu_handmade</p>
+                <p>QQ：1234567890</p>
+            </div>
+
+            <!-- 友情链接 -->
+            <div class="footer-col">
+                <h4>🔗 友情链接</h4>
+                <ul>
+                    <li><a href="https://www.douban.com" target="_blank" rel="noopener">豆瓣 - 发现生活</a></li>
+                    <li><a href="https://www.zhihu.com" target="_blank" rel="noopener">知乎 - 知识分享</a></li>
+                    <li><a href="https://huaban.com" target="_blank" rel="noopener">花瓣 - 设计灵感</a></li>
+                    <li><a href="links/index.html">更多链接 →</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 版权信息 -->
+        <div class="footer-bottom">
+            <p>© 2024 璐璐手作小屋 | 作者：璐璐 | 邮箱：yelulu@example.com | 地址：中国某某大学手工社团</p>
+            <p>本网站为个人学习作品，仅供展示交流使用 | 全站采用 DIV+CSS 布局 | 兼容主流浏览器</p>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

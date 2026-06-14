@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>建站总结报告 — 璐璐手作小屋</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+        }
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "SimSun", "Songti SC", "PingFang SC", serif;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background: #fff;
+        }
+        /* 封面 */
+        .cover {
+            text-align: center;
+            padding: 100px 0 80px;
+            page-break-after: always;
+        }
+        .cover h1 {
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            font-family: "SimHei", "PingFang SC", sans-serif;
+        }
+        .cover .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        .cover .info-table {
+            margin: 60px auto 0;
+            border-collapse: collapse;
+        }
+        .cover .info-table td {
+            padding: 10px 20px;
+            font-size: 15px;
+            text-align: left;
+        }
+        .cover .info-table td:first-child {
+            font-weight: bold;
+            white-space: nowrap;
+            text-align: right;
+            width: 140px;
+        }
+        /* 目录 */
+        .toc {
+            page-break-after: always;
+        }
+        .toc h2 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .toc ul {
+            list-style: none;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #ccc;
+            font-size: 15px;
+        }
+        .toc li span { float: right; color: #999; }
+        /* 章节标题 */
+        h2.chapter {
+            font-size: 20px;
+            margin: 40px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #333;
+            letter-spacing: 1px;
+        }
+        h3.section {
+            font-size: 16px;
+            margin: 24px 0 12px;
+            color: #444;
+        }
+        p { text-indent: 2em; margin-bottom: 10px; }
+        /* 截图页 */
+        .screenshot-page {
+            page-break-before: always;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .screenshot-page .page-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            text-align: left;
+            text-indent: 0;
+        }
+        .screenshot-page .shot-box {
+            border: 2px dashed #ccc;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            background: #fafafa;
+            margin-bottom: 8px;
+        }
+        .screenshot-page .shot-caption {
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+            text-indent: 0;
+        }
+        /* 表格 */
+        table.data {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        table.data th, table.data td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        table.data th {
+            background: #f5f5f5;
+            font-weight: bold;
+        }
+        table.data td { text-indent: 0; }
+        /* 代码块 */
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+    <h1>建 站 总 结 报 告</h1>
+    <div class="subtitle">——璐璐手作小屋 个人手工博客网站</div>
+
+    <table class="info-table">
+        <tr><td>网站名称：</td><td>璐璐手作小屋</td></tr>
+        <tr><td>网站作者：</td><td>璐璐</td></tr>
+        <tr><td>专业班级：</td><td>____________________</td></tr>
+        <tr><td>学&nbsp;&nbsp;&nbsp;&nbsp;号：</td><td>____________________</td></tr>
+        <tr><td>提交日期：</td><td>2024年6月12日</td></tr>
+    </table>
+</div>
+
+<!-- ==================== 目录 ==================== -->
+<div class="toc">
+    <h2>目&emsp;录</h2>
+    <ul>
+        <li>一、网站概述 <span>1</span></li>
+        <li>二、网站主题与设计理念 <span>2</span></li>
+        <li>三、网站结构规划设计 <span>3</span></li>
+        <li>四、技术实现方案 <span>5</span></li>
+        <li>五、各页面详细说明与截图 <span>7</span></li>
+        <li>六、遇到的问题与解决方案 <span>32</span></li>
+        <li>七、总结与收获 <span>33</span></li>
+    </ul>
+</div>
+
+<!-- ==================== 正文 ==================== -->
+
+<h2 class="chapter page-break">一、网站概述</h2>
+
+<h3 class="section">1.1 项目背景</h3>
+<p>随着互联网的普及和个人表达需求的增长，个人博客网站已经成为展示自我、分享兴趣的重要平台。作为一名热爱手工的女大学生，我希望能通过一个专属的个人网站，将自己的手工作品、创作心得和生活感悟分享给更多的人。本次课程设计恰好提供了这样一个机会，让我能够将所学的前端开发知识运用到实践中，搭建一个真正属于自己的网站。</p>
+<p>本次建站项目以"璐璐手作小屋"为主题，围绕手工布娃娃制作和木质相框制作两大核心内容展开。网站旨在向浏览者清晰展示手工艺术的魅力，传递积极向上的生活态度和价值观。</p>
+
+<h3 class="section">1.2 网站基本信息</h3>
+<p>网站名称定为"璐璐手作小屋"（英文名：Lulu's Handmade Cottage），以作者姓名"璐璐"为核心品牌元素，融合手工、温暖、治愈等关键词，塑造出一个充满温度的个人手工博客形象。网站定位为个人作品展示与交流平台，面向对布艺手工和木工制作感兴趣的浏览者。</p>
+<p>网站的个人口号为"风雨里做一个大人，阳光下做个孩子"，这一口号体现了作者的人生态度——在面对学业压力和成长挑战时保持成熟坚韧，在投入手工创作时保持童心与快乐。这一精神贯穿了网站的整体设计与内容表达。</p>
+
+
+<h2 class="chapter page-break">二、网站主题与设计理念</h2>
+
+<h3 class="section">2.1 主题定位</h3>
+<p>网站核心主题为"手工艺术与温暖生活"。手工制作不仅是一种创作活动，更承载着情感与温度。每一件布娃娃都经过精心的设计、剪裁和缝制，每一只都拥有独特的"ee们属性"和"夏鸣星属性"，尺寸统一为40cm大号；每一个木质相框都经过选材、锯切、打磨、拼接、上色等多道工序，保留了木材天然的纹理与质感。通过这些作品的展示，网站传达出"用手创造、用心生活"的核心价值观。</p>
+<p>该主题契合当代大学生的价值思想——鼓励创造精神、弘扬工匠精神、倡导积极健康的生活方式，具有鲜明的正向引导意义。</p>
+
+<h3 class="section">2.2 设计风格</h3>
+<p>网站整体采用温暖治愈的视觉风格。色彩方案以暖色调为主——主色为温暖珊瑚粉（#E8917E），辅以柔和桃色（#F5D5C8）和鼠尾草绿（#8BA888），背景采用温暖的米白色（#FFFBF7），文字为深棕色（#4A3728）。整个配色方案参考了手工材料（布料、木材）的自然色彩，营造出温馨舒适、自然质朴的视觉氛围。</p>
+<p>页面布局采用现代化的卡片式设计，配合柔和的圆角和细腻的阴影效果，使页面显得友好而不失精致。字体选用了系统默认中文字体栈，确保在不同操作系统和浏览器上都有良好的显示效果。</p>
+
+<h3 class="section">2.3 Logo设计</h3>
+<p>网站Logo采用文字+图标组合形式。图标为"🧵"（针线emoji），直接传达了"手工缝制"的核心意象，简洁直观、易于记忆。搭配"璐璐手作小屋"中文名称和"Lulu's Handmade Cottage"英文副标题，整体风格既接地气又具有辨识度。Logo以圆形渐变背景衬托，配色使用主色调珊瑚粉到鼠尾草绿的渐变，体现手工的柔美与自然的融合。</p>
+
+
+<h2 class="chapter page-break">三、网站结构规划设计</h2>
+
+<h3 class="section">3.1 整体架构</h3>
+<p>网站采用树形层级结构，共设7个一级频道栏目，每个频道下设3至4个子页面，总计25个HTML页面。频道设置围绕"手工"核心主题展开，覆盖作品展示、个人介绍、互动交流、资源共享等多个维度。</p>
+
+<table class="data">
+    <tr><th>序号</th><th>频道名称</th><th>目录</th><th>子页数</th><th>功能说明</th></tr>
+    <tr><td>1</td><td>首页</td><td>/</td><td>1</td><td>网站门户，展示精选内容</td></tr>
+    <tr><td>2</td><td>关于我</td><td>about/</td><td>3</td><td>个人介绍、故事、爱好</td></tr>
+    <tr><td>3</td><td>布娃娃</td><td>dolls/</td><td>4</td><td>布娃娃作品展示与详情</td></tr>
+    <tr><td>4</td><td>木质相框</td><td>frames/</td><td>4</td><td>木质相框展示与详情</td></tr>
+    <tr><td>5</td><td>作品集</td><td>gallery/</td><td>3</td><td>作品分类汇总浏览</td></tr>
+    <tr><td>6</td><td>手工日记</td><td>diary/</td><td>4</td><td>手工心得与生活记录</td></tr>
+    <tr><td>7</td><td>留言交流</td><td>guestbook/</td><td>3</td><td>用户互动、留言与联系</td></tr>
+    <tr><td>8</td><td>友情链接</td><td>links/</td><td>3</td><td>推荐网站与友链申请</td></tr>
+    <tr><td colspan="3" style="text-align:right;font-weight:bold;">合计：</td><td>25</td><td>8个频道（含首页），7个子频道</td></tr>
+</table>
+
+<h3 class="section">3.2 目录结构设计</h3>
+<p>根据作业规范要求，全站文件按栏目分类存放，目录层级不超过3层。文件及文件夹命名统一使用小写英文字母和阿拉伯数字组合，做到见名知意。</p>
+
+<div class="code-block">weiwei_website/
+├── index.html                  # 首页
+├── css/
+│   └── style.css               # 全局样式表
+├── js/
+│   └── main.js                 # 交互脚本
+├── images/
+│   └── works/                  # 作品图片目录
+│       ├── doll1.jpg ~ doll3.jpg
+│       ├── frame1.jpg ~ frame3.jpg
+│       └── gallery1.jpg ~ gallery2.jpg
+├── about/                      # 关于我频道
+│   ├── index.html
+│   ├── story.html
+│   └── hobby.html
+├── dolls/                      # 布娃娃频道
+│   ├── index.html
+│   ├── detail1.html
+│   ├── detail2.html
+│   └── detail3.html
+├── frames/                     # 木质相框频道
+│   ├── index.html
+│   ├── detail1.html
+│   ├── detail2.html
+│   └── detail3.html
+├── gallery/                    # 作品集频道
+│   ├── index.html
+│   ├── doll.html
+│   └── frame.html
+├── diary/                      # 手工日记频道
+│   ├── index.html
+│   ├── post1.html
+│   ├── post2.html
+│   └── post3.html
+├── guestbook/                  # 留言交流频道
+│   ├── index.html
+│   ├── messages.html
+│   └── contact.html
+└── links/                      # 友情链接频道
+    ├── index.html
+    ├── apply.html
+    └── recommend.html</div>
+
+<h3 class="section">3.3 导航结构设计</h3>
+<p>网站采用粘性顶部导航栏（Sticky Navbar），固定于页面顶部，随页面滚动始终可见。导航栏包含8个入口：首页、关于我、布娃娃、木质相框、作品集、手工日记、留言交流、友情链接。每个子页面通过面包屑导航（Breadcrumb）标识当前位置，用户可以随时了解自己所在的页面层级并快速返回上级页面。</p>
+<p>全站所有链接统一使用相对链接格式，经Python脚本自动校验，25个页面之间的所有内部链接均有效可访问，无死链、无跳转错误。</p>
+
+
+<h2 class="chapter page-break">三、网站结构规划设计（续）</h2>
+
+<h3 class="section">3.4 页面功能元素</h3>
+<p>根据作业规范要求，网站配备了以下常规功能元素：</p>
+<p><strong>（1）导航栏：</strong>位于页面顶部，包含全站8个主要栏目的入口链接。导航栏采用粘性定位（position: sticky），在用户滚动页面时始终可见，确保随时可以跳转到任意栏目。移动端适配为汉堡菜单模式，点击展开。</p>
+<p><strong>（2）滚动公告栏：</strong>位于导航栏上方，使用CSS动画实现文字的循环滚动播放。公告内容涵盖网站欢迎语、作品推广、联系方式等信息，增强页面的动态感和信息传达效率。鼠标悬停时动画暂停，方便用户仔细阅读。</p>
+<p><strong>（3）版权信息：</strong>位于每个页面的底部（Footer区域），完整标注了网站作者姓名（璐璐）、电子邮箱（yelulu@example.com）、联系地址（中国某某大学手工社团）等信息，符合学术规范和版权要求。</p>
+<p><strong>（4）友情链接：</strong>通过两个渠道呈现：一是在每个页面的Footer区域设有友情链接板块，推荐豆瓣、知乎、花瓣等常用网站；二是独立的"友情链接"频道，包含推荐网站展示、友链申请表单和手工相关资源推荐。</p>
+<p><strong>（5）联系方式：</strong>在Footer区域和"留言交流"频道中均提供了多种联系方式，包括邮箱、微信、QQ、小红书、抖音等渠道，方便不同类型的访客选择最便捷的方式与作者取得联系。</p>
+<p><strong>（6）用户双向交流板块：</strong>在"留言交流"频道中实现了完整的留言板系统。访客可以填写昵称、邮箱和留言内容进行发布，所有留言通过浏览器的localStorage进行本地存储和展示。虽然受限于静态网站的技术特性无法实现真正的服务端存储，但通过前端技术模拟了完整的留言交互体验。此外，还提供了独立的"联系我们"表单，支持选择咨询主题（定制咨询、合作交流、建议反馈等）。</p>
+
+
+<h2 class="chapter page-break">四、技术实现方案</h2>
+
+<h3 class="section">4.1 前端技术选型</h3>
+<p>本网站采用纯静态网页技术实现，使用HTML5 + CSS3 + JavaScript（ES6）技术栈。全站无需任何后端服务器、数据库或第三方框架依赖，确保了网站的轻量化、高兼容性和零部署成本。</p>
+<p>选择纯静态方案的原因有三：一是课程要求为静态网页设计，纯静态方案完全满足；二是静态网站无需服务器端支持，可以直接在本地浏览器中打开使用，也可以方便地部署到任何静态托管平台（如GitHub Pages、Vercel等）；三是对于个人作品展示类网站而言，静态方案在性能、安全性和维护成本方面都具有明显优势。</p>
+
+<h3 class="section">4.2 DIV+CSS布局技术</h3>
+<p>全站严格遵循DIV+CSS布局规范，未使用table标签进行任何页面布局。页面结构通过语义化的HTML5标签（如header、nav、main、section、article、footer等）和div容器进行组织，配合CSS Flexbox和Grid布局系统实现页面排版。</p>
+<p>在CSS架构方面，采用了CSS自定义属性（CSS Variables）统一管理全站的颜色、间距、阴影、圆角等设计变量，确保了风格统一和后期维护的便捷性。例如：</p>
+<div class="code-block">:root {
+    --primary: #E8917E;      /* 主色调 */
+    --bg: #FFFBF7;           /* 背景色 */
+    --text: #4A3728;         /* 文字色 */
+    --shadow: 0 2px 12px rgba(74, 55, 40, 0.08);
+    --radius: 12px;          /* 圆角 */
+    --max-width: 1200px;     /* 最大宽度 */
+    --nav-height: 70px;      /* 导航高度 */
+}</div>
+
+<h3 class="section">4.3 响应式设计</h3>
+<p>网站采用响应式设计策略，通过CSS媒体查询（Media Queries）适配不同屏幕尺寸的设备：</p>
+<p><strong>桌面端（>768px）：</strong>导航栏横向展开，作品展示采用多列网格布局（最多4列），关于我区域采用左右双栏布局，作品详情页采用图片与信息并排的双栏布局。</p>
+<p><strong>平板/手机端（≤768px）：</strong>导航栏收缩为汉堡菜单，作品展示改为单列布局，关于我区域和作品详情页改为上下堆叠布局。字号适当缩小以保证内容密度。</p>
+<p><strong>小屏手机（≤480px）：</strong>进一步优化间距和字号，确保在窄屏上依然有舒适的阅读体验。</p>
+
+<h3 class="section">4.4 JavaScript交互实现</h3>
+<p>网站JavaScript实现了以下交互功能：</p>
+<p>（1）<strong>移动端菜单切换：</strong>监听汉堡按钮点击事件，展开/收起导航菜单，并处理点击菜单外区域自动关闭的逻辑。</p>
+<p>（2）<strong>回到顶部按钮：</strong>监听页面滚动事件，当滚动超过400px后显示回到顶部按钮，点击后平滑滚动至页面顶部。</p>
+<p>（3）<strong>当前导航高亮：</strong>根据当前页面URL自动匹配对应的导航链接并添加active样式。</p>
+<p>（4）<strong>留言板系统：</strong>通过localStorage实现留言的存储、读取和展示。访客提交的留言会序列化为JSON存入浏览器本地存储，页面加载时自动读取并渲染留言列表。</p>
+<p>（5）<strong>作品分类筛选：</strong>在作品集页面实现了按类别（全部/布娃娃/木质相框）的筛选功能。</p>
+<p>（6）<strong>表单验证与提示：</strong>为留言表单、联系表单、友链申请表单提供了基础的前端验证和Toast消息提示。</p>
+
+<h3 class="section">4.5 浏览器兼容性</h3>
+<p>网站在开发过程中注意了主流浏览器的兼容性。CSS使用了广泛支持的属性，Flexbox和Grid布局在现代浏览器中均有良好支持。JavaScript使用ES6语法，兼容Chrome、Firefox、Safari、Edge等主流浏览器的近两年版本。通过系统字体栈确保了各操作系统的字体显示一致性。</p>
+
+
+<h2 class="chapter page-break">五、各页面详细说明与截图</h2>
+<p style="text-indent:0;color:#666;">（以下共25页，每页展示一个网页的截图及说明）</p>
+
+<!-- 第1页：首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 1/25：首页（index.html）</p>
+    <div class="shot-box">【请在此处插入首页完整截图】</div>
+    <p class="shot-caption">图1：网站首页 — 包含英雄区、特色展示、精选作品、关于我预览、手工日记预览五大板块，以及滚动公告栏、导航栏和完整页脚</p>
+</div>
+
+<!-- 第2页：关于我-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 2/25：关于我（about/index.html）</p>
+    <div class="shot-box">【请在此处插入关于我页面完整截图】</div>
+    <p class="shot-caption">图2：关于我频道首页 — 个人介绍、手工方向的图文展示，提供"我的故事"和"我的爱好"的跳转入口</p>
+</div>
+
+<!-- 第3页：我的故事 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 3/25：我的故事（about/story.html）</p>
+    <div class="shot-box">【请在此处插入我的故事页面完整截图】</div>
+    <p class="shot-caption">图3：我的故事 — 从大学加入手工社团到成为手工爱好者的完整成长叙事，包含丰富的手工学习历程描述</p>
+</div>
+
+<!-- 第4页：我的爱好 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 4/25：我的爱好（about/hobby.html）</p>
+    <div class="shot-box">【请在此处插入我的爱好页面完整截图】</div>
+    <p class="shot-caption">图4：我的爱好 — 以六宫格卡片形式展示布娃娃制作、木质相框、摄影记录、阅读、音乐、绿植养护六大爱好</p>
+</div>
+
+<!-- 第5页：布娃娃-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 5/25：布娃娃作品首页（dolls/index.html）</p>
+    <div class="shot-box">【请在此处插入布娃娃频道首页完整截图】</div>
+    <p class="shot-caption">图5：布娃娃频道首页 — 频道介绍文字、三件布娃娃作品的卡片展示（暖暖小熊、星梦兔兔、花花猫咪），每件标注属性和尺寸</p>
+</div>
+
+<!-- 第6页：布娃娃详情1 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 6/25：暖暖小熊详情（dolls/detail1.html）</p>
+    <div class="shot-box">【请在此处插入暖暖小熊详情页完整截图】</div>
+    <p class="shot-caption">图6：暖暖小熊详情页 — 左侧大图、右侧详细信息（尺寸40cm、ee们属性、夏鸣星属性、材质面料、制作工艺等），以及作品间导航</p>
+</div>
+
+<!-- 第7页：布娃娃详情2 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 7/25：星梦兔兔详情（dolls/detail2.html）</p>
+    <div class="shot-box">【请在此处插入星梦兔兔详情页完整截图】</div>
+    <p class="shot-caption">图7：星梦兔兔详情页 — 粉白配色兔子造型布娃娃的详细介绍，包含设计理念、面料选择和刺绣工艺说明</p>
+</div>
+
+<!-- 第8页：布娃娃详情3 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 8/25：花花猫咪详情（dolls/detail3.html）</p>
+    <div class="shot-box">【请在此处插入花花猫咪详情页完整截图】</div>
+    <p class="shot-caption">图8：花花猫咪详情页 — 花色面料猫咪造型布娃娃的详细介绍，突出手工刺绣的面部表情和双重属性特质</p>
+</div>
+
+<!-- 第9页：木质相框-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 9/25：木质相框首页（frames/index.html）</p>
+    <div class="shot-box">【请在此处插入木质相框频道首页完整截图】</div>
+    <p class="shot-caption">图9：木质相框频道首页 — 频道介绍、三件相框作品的卡片展示（田园风实木、复古做旧、简约现代），标注风格特点</p>
+</div>
+
+<!-- 第10页：相框详情1 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 10/25：田园风实木相框详情（frames/detail1.html）</p>
+    <div class="shot-box">【请在此处插入田园风实木相框详情页完整截图】</div>
+    <p class="shot-caption">图10：田园风实木相框详情页 — 左侧大图、右侧工艺详情（天然实木、榫卯结构、木蜡油涂装等），突出自然田园风格</p>
+</div>
+
+<!-- 第11页：相框详情2 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 11/25：复古做旧相框详情（frames/detail2.html）</p>
+    <div class="shot-box">【请在此处插入复古做旧相框详情页完整截图】</div>
+    <p class="shot-caption">图11：复古做旧相框详情页 — 手工做旧工艺的详细介绍，包括多层打磨上色擦拭的循环工序说明</p>
+</div>
+
+<!-- 第12页：相框详情3 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 12/25：简约现代相框详情（frames/detail3.html）</p>
+    <div class="shot-box">【请在此处插入简约现代相框详情页完整截图】</div>
+    <p class="shot-caption">图12：简约现代相框详情页 — 极简设计语言的展示，精细木工工艺和哑光涂装的三道工序说明</p>
+</div>
+
+<!-- 第13页：作品集-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 13/25：作品集首页（gallery/index.html）</p>
+    <div class="shot-box">【请在此处插入作品集首页完整截图】</div>
+    <p class="shot-caption">图13：作品集频道首页 — 全部6件作品的汇总展示，包含分类筛选按钮（全部/布娃娃/木质相框），支持点击筛选</p>
+</div>
+
+<!-- 第14页：作品集-布娃娃专题 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 14/25：布娃娃专题（gallery/doll.html）</p>
+    <div class="shot-box">【请在此处插入布娃娃专题页完整截图】</div>
+    <p class="shot-caption">图14：布娃娃专题页 — 三件布娃娃作品的集中展示，标注ee们属性、夏鸣星属性和40cm尺寸</p>
+</div>
+
+<!-- 第15页：作品集-相框专题 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 15/25：木质相框专题（gallery/frame.html）</p>
+    <div class="shot-box">【请在此处插入木质相框专题页完整截图】</div>
+    <p class="shot-caption">图15：木质相框专题页 — 三件木质相框作品的集中展示，标注风格类型和工艺特点</p>
+</div>
+
+<!-- 第16页：手工日记-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 16/25：手工日记首页（diary/index.html）</p>
+    <div class="shot-box">【请在此处插入手工日记首页完整截图】</div>
+    <p class="shot-caption">图16：手工日记频道首页 — 三篇日记文章列表，每篇带有日期徽章、摘要和元信息（分类、浏览量、评论数）</p>
+</div>
+
+<!-- 第17页：日记-第一只布娃娃 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 17/25：我的第一只布娃娃诞生记（diary/post1.html）</p>
+    <div class="shot-box">【请在此处插入第一只布娃娃日记页完整截图】</div>
+    <p class="shot-caption">图17：手工日记① — 讲述从社团活动初次接触手工、第一次尝试制作布偶的完整经历与感悟</p>
+</div>
+
+<!-- 第18页：日记-木工入门 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 18/25：木质相框入门心得分享（diary/post2.html）</p>
+    <div class="shot-box">【请在此处插入木质相框入门日记页完整截图】</div>
+    <p class="shot-caption">图18：手工日记② — 从布艺到木工的跨界心得，涵盖工具选择、锯木技巧、打磨方法和榫卯结构学习历程</p>
+</div>
+
+<!-- 第19页：日记-手工感悟 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 19/25：手工给我带来的改变（diary/post3.html）</p>
+    <div class="shot-box">【请在此处插入手工感悟日记页完整截图】</div>
+    <p class="shot-caption">图19：手工日记③ — 深度反思手工给个人带来的五大改变：耐心、专注力、审美感知、人际连接和接纳不完美</p>
+</div>
+
+<!-- 第20页：留言交流-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 20/25：留言交流首页（guestbook/index.html）</p>
+    <div class="shot-box">【请在此处插入留言交流首页完整截图】</div>
+    <p class="shot-caption">图20：留言交流频道首页 — 留言发布表单（昵称、邮箱、内容）和留言列表展示区，支持本地存储的留言系统</p>
+</div>
+
+<!-- 第21页：全部留言 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 21/25：全部留言（guestbook/messages.html）</p>
+    <div class="shot-box">【请在此处插入全部留言页完整截图】</div>
+    <p class="shot-caption">图21：全部留言页 — 展示所有已发布的留言列表，每条留言包含作者、时间、内容和博主回复（如有）</p>
+</div>
+
+<!-- 第22页：联系方式 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 22/25：联系方式（guestbook/contact.html）</p>
+    <div class="shot-box">【请在此处插入联系方式页完整截图】</div>
+    <p class="shot-caption">图22：联系方式页 — 六宫格展示各类联系方式（邮箱、微信、QQ、地址、小红书、抖音），底部有详细的联系表单</p>
+</div>
+
+<!-- 第23页：友情链接-首页 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 23/25：友情链接首页（links/index.html）</p>
+    <div class="shot-box">【请在此处插入友情链接首页完整截图】</div>
+    <p class="shot-caption">图23：友情链接频道首页 — 六宫格推荐网站展示（花瓣、豆瓣、知乎、B站、小红书、淘宝），每个带有简介和外链</p>
+</div>
+
+<!-- 第24页：申请友链 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 24/25：申请友链（links/apply.html）</p>
+    <div class="shot-box">【请在此处插入申请友链页完整截图】</div>
+    <p class="shot-caption">图24：申请友链页 — 友链交换要求说明、本站信息展示和友链申请表（网站名称、网址、描述、联系方式）</p>
+</div>
+
+<!-- 第25页：更多推荐 -->
+<div class="screenshot-page">
+    <p class="page-label">页面 25/25：更多推荐（links/recommend.html）</p>
+    <div class="shot-box">【请在此处插入更多推荐页完整截图】</div>
+    <p class="shot-caption">图25：更多推荐页 — 推荐的书籍（3本手工相关书籍）和工具（3套手工工具推荐），以卡片形式展示</p>
+</div>
+
+
+<h2 class="chapter page-break">六、遇到的问题与解决方案</h2>
+
+<h3 class="section">6.1 纯静态网站的交互局限</h3>
+<p><strong>问题描述：</strong>作业要求配备"用户双向交流板块"，但纯静态HTML网站没有后端服务器和数据库支持，无法实现真正的用户留言存储和展示功能。</p>
+<p><strong>解决方案：</strong>采用浏览器的localStorage API实现留言数据的前端存储。用户提交的留言以JSON格式保存在浏览器本地存储中，页面加载时自动读取并渲染。虽然数据不会在不同设备间同步，但在同一浏览器环境下可以提供完整的留言发布、查看体验，满足了作业对"双向交流板块"的功能要求。在报告中诚实地说明了这一技术限制。</p>
+
+<h3 class="section">6.2 响应式导航的移动端适配</h3>
+<p><strong>问题描述：</strong>8个导航链接在移动端窄屏上无法全部横向展示，会出现换行或溢出问题。</p>
+<p><strong>解决方案：</strong>在移动端（≤768px）将横向导航改为汉堡菜单模式。通过CSS媒体查询隐藏桌面端导航、显示汉堡按钮，通过JavaScript实现菜单的展开/收起切换，并处理了点击菜单外区域自动关闭、点击菜单项后自动关闭等边界情况，确保移动端有良好的操作体验。</p>
+
+<h3 class="section">6.3 大量页面的开发效率</h3>
+<p><strong>问题描述：</strong>全站共25个HTML页面，如果逐个编写容易导致风格不一致、代码冗余和维护困难。</p>
+<p><strong>解决方案：</strong>将所有共享样式（导航栏、公告栏、页脚、卡片样式、表单样式等）集中到单一的style.css文件中，通过CSS变量统一管理设计参数。JavaScript代码也集中在main.js中，通过检测DOM元素的存在与否来决定执行哪些逻辑（防御性编程），避免在不需要某功能的页面上报错。这种架构使得每个HTML页面只需关注自身的内容，样式和交互完全由公共文件提供。</p>
+
+<h3 class="section">6.4 图片文件体积优化</h3>
+<p><strong>问题描述：</strong>原始照片文件体积在189KB至404KB之间，直接使用可能影响网页加载速度。</p>
+<p><strong>解决方案：</strong>由于作业规范要求严控多媒体文件体积，在HTML中使用了loading="lazy"属性实现图片的懒加载，仅在图片即将进入视口时才加载。同时通过CSS设置了合理的显示尺寸，确保图片在不失真的前提下以合适的体积呈现。后续如有需要，可进一步使用图片压缩工具进行无损或轻度有损压缩。</p>
+
+
+<h2 class="chapter page-break">七、总结与收获</h2>
+
+<h3 class="section">7.1 技术收获</h3>
+<p>通过本次建站实践，我对DIV+CSS布局技术有了更深入的理解和实践。在项目中使用CSS Grid进行卡片网格布局、使用Flexbox进行导航栏和内容对齐，深刻地体会到了现代CSS布局方案的强大和灵活。CSS自定义属性（CSS Variables）的使用让我认识到设计系统的重要性——将颜色、间距、圆角等设计参数统一管理，不仅提高了开发效率，也确保了全站视觉风格的一致性。</p>
+<p>在JavaScript方面，通过实现留言板系统、分类筛选、移动端菜单等交互功能，加深了对DOM操作、事件处理和浏览器存储API的理解。特别是localStorage的运用，让我认识到在静态网站中也可以通过前端技术实现一定的数据持久化能力。</p>
+<p>在响应式设计方面，通过实际编写媒体查询和处理多端适配，掌握了移动优先（Mobile First）和渐进增强的设计思路，理解了如何在不同屏幕尺寸下提供最优的用户体验。</p>
+
+<h3 class="section">7.2 项目管理收获</h3>
+<p>本次项目让我认识到良好的前期规划对项目成功的重要性。在动手写代码之前，我花了大量时间进行网站主题定位、信息架构设计、目录结构规划和页面内容策划。这些前期工作虽然在代码层面看不到，但正是它们确保了整个建站过程的方向正确和执行高效。</p>
+<p>文件命名规范和目录结构的严格遵守，虽然在初期带来了一些额外的工作量，但在项目后期体现出了巨大价值——清晰的结构使得查找文件、检查链接、维护更新都变得非常便捷。这种规范意识对今后从事任何规模的软件开发项目都是宝贵的经验。</p>
+<p>全站25个页面的内部链接通过自动化脚本一次校验完成，让我体会到了自动化工具在质量保障中的重要作用——人工检查链接不仅耗时，而且容易遗漏。</p>
+
+<h3 class="section">7.3 内容创作收获</h3>
+<p>网站不仅是技术的载体，更是内容的呈现。为了填充25个页面，我认真梳理了自己的手工经历——从加入社团的初体验到制作第一只布娃娃的细节，从布艺到木工的跨界探索，从手工中获得的感悟和成长。这个过程本身就是一次有意义的自我回顾和总结。</p>
+<p>在撰写每个页面的文案时，我努力做到"内容丰富饱满、紧扣主题、价值观积极正向"，让文字既有信息量又有感染力。作品详情页中关于工艺的描述、日记中关于成长感悟的表述，都经过了反复推敲，力求让浏览者能够感受到手工的温度和作者的用心。</p>
+
+<h3 class="section">7.4 不足与展望</h3>
+<p>回顾整个建站过程，也存在一些不足：一是由于纯静态网站的技术限制，留言功能只能依赖浏览器本地存储，无法实现真正的跨设备数据同步；二是在动画效果方面还有提升空间，可以增加更丰富的CSS过渡和交互动效；三是图片资源尚未进行深度优化压缩。</p>
+<p>未来如果有机会继续完善这个网站，我计划从以下几个方向入手：部署到GitHub Pages等免费托管平台实现公网访问；增加更多的CSS动画和微交互提升用户体验；使用图片压缩工具优化加载性能；考虑使用静态网站生成器（如Hugo、Jekyll等）来管理日益增多的页面内容。</p>
+
+<h3 class="section">7.5 结语</h3>
+<p>从零开始搭建一个拥有25个页面、7个频道的完整个人网站，是一个充满挑战但也收获满满的过程。看着自己一针一线缝制的布娃娃和一锯一凿打磨的木质相框，通过一行行代码呈现在网页上，那种成就感是无法用言语形容的。正如我的个人口号所说——"风雨里做一个大人，阳光下做个孩子"。在建站过程中遇到困难时，我以大人的坚韧去面对和解决；在完成每一个页面时，我像孩子一样感到纯粹的快乐和满足。</p>
+<p>感谢这次课程设计的机会，让我将前端技术、设计美学和对手工的热爱融合在了一起。这个网站不仅是一个课程作业，更是我大学生活中一份特别的纪念。</p>
+
+<p style="text-align:center;margin-top:60px;color:#999;font-size:13px;">— 报告完 —</p>
+<p style="text-align:center;color:#999;font-size:13px;">报告总字数：约 4,500 字（不含截图说明）</p>
+
+</body>
+</html>
